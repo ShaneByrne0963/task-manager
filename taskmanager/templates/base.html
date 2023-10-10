@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a1e78fae2.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Task Manager</title>
@@ -18,19 +18,19 @@
         <nav class="teal darken-1">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo">Task Manager</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">New Task</a></li>
-                    <li><a href="{{ url_for('home') }}">Categories</a></li>
+                    <li><a href="{{ url_for('categories') }}">New Task</a></li>
+                    <li><a href="{{ url_for('categories') }}">Categories</a></li>
                 </ul>
             </div>
         </nav>
 
         <ul class="sidenav " id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('home') }}">New Task</a></li>
-            <li><a href="{{ url_for('home') }}">Categories</a></li>
+            <li><a href="{{ url_for('categories') }}">New Task</a></li>
+            <li><a href="{{ url_for('categories') }}">Categories</a></li>
         </ul>
     </header>
 
@@ -39,7 +39,7 @@
         {% endblock %}
     </main>
 
-    <footer class="page-footer teal darken-1">
+    <footer class="page-footer teal darken-3">
         <div class="footer-copyright">
             <div class="container">
                 © 2014 Copyright Text
