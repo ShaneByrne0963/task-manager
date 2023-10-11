@@ -21,7 +21,24 @@
                 </div>
                 <div class="card-action">
                     <a href="{{ url_for('edit_category', category_id=category.id) }}" class="btn blue light-2">Edit</a>
-                    <a href="{{ url_for('delete_category', category_id=category.id) }}" class="btn red">Delete</a>
+                    <a class="btn red modal-trigger" href="#modal{{ category.id }}">Delete</a>
+
+                    <!-- Modal for deleting categories -->
+                    <div id="modal{{ category.id }}" class="modal">
+                        <div class="modal-content">
+                            <h4>Delete Category</h4>
+                            <p>Are you sure you want to delete {{ category.category_name }}?
+                                (This cannot be undone)
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('delete_category', category_id=category.id) }}"
+                                class="waves-effect waves-teal btn-flat grey-text text-darken-4">Delete</a>
+                            <a href="#"
+                                class="modal-close waves-effect waves-teal btn-flat grey-text text-darken-4">Cancel</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
